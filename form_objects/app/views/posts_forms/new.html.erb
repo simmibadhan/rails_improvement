@@ -1,0 +1,6 @@
+<%= form_for @posts_form do |f| %>
+  <%= f.hidden_field :user_id, :value => current_user.id %>
+  <%= f.label :post_text, 'Post Text' %>:
+  <%= f.text_field :post_text %>
+  <%= f.submit %>
+<% end %>
