@@ -1,7 +1,10 @@
-<h3><%=@post.title%></h3>
+<h3><%=@post_decorator.title%></h3>
+<p><%=@post_decorator.publication_date%></p>
 <p>
-	<%=@post.post_text%>
+	<%=@post_decorator.post_text%>
 </p>
-<p>
-	<%=image_tag(@post.image_link)%>
-</p>
+<%if @post_decorator.is_front_page?%>
+	<p>
+		<%=image_tag(@post_decorator.image_link)%>
+	</p>
+<%end%>
