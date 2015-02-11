@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <h3>Posts</h3>
+    <div class="column">
+      <table class="table">
+        <tbody>
+          <%if @posts.present?%>
+						<%@posts.each do |post|%>
+							<tr>
+								<td><%=link_to post.title, post_path(post)%></td>
+                <%if post.is_front_page?%>
+                  <td><%=image_tag(post.image_link, :height=>50, :width=>50)%></td>
+                <%end%>
+							</tr>
+						<%end%>
+					<%end%>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
